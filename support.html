@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ClawApp Support</title>
+  <style>
+    :root {
+      color-scheme: light dark;
+      --bg: #f6f7fb;
+      --card: rgba(255,255,255,0.88);
+      --text: #101828;
+      --muted: #475467;
+      --border: rgba(16,24,40,0.12);
+      --accent: #0f62fe;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #08111f;
+        --card: rgba(11,18,32,0.92);
+        --text: #f8fafc;
+        --muted: #cbd5e1;
+        --border: rgba(148,163,184,0.2);
+        --accent: #60a5fa;
+      }
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: radial-gradient(circle at top left, rgba(15,98,254,0.12), transparent 28%), var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+    main {
+      max-width: 920px;
+      margin: 0 auto;
+      padding: 32px 20px 56px;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2.1rem;
+    }
+    header p {
+      margin: 10px 0 0;
+      color: var(--muted);
+    }
+    .card {
+      margin-top: 22px;
+      padding: 22px;
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      background: var(--card);
+      backdrop-filter: blur(10px);
+    }
+    h2 {
+      margin: 0 0 14px;
+      font-size: 1.15rem;
+    }
+    h3 {
+      margin: 18px 0 8px;
+      font-size: 1rem;
+    }
+    ul, ol { margin: 10px 0 0 20px; }
+    li + li { margin-top: 6px; }
+    .muted { color: var(--muted); }
+    .split {
+      display: grid;
+      gap: 18px;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    }
+    code {
+      padding: 2px 6px;
+      border-radius: 8px;
+      background: rgba(127,127,127,0.15);
+      font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+      font-size: 0.92em;
+    }
+    a { color: var(--accent); }
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <h1>ClawApp Support</h1>
+      <p>This local copy is bundled with ClawApp. You can publish the same file later at <code>https://clawapp.work/support</code>.</p>
+    </header>
+
+    <section class="card">
+      <h2>English</h2>
+      <div class="split">
+        <div>
+          <h3>Before contacting support</h3>
+          <ol>
+            <li>Open <strong>Settings</strong> and try <strong>Restart Backend</strong>.</li>
+            <li>Open <strong>Diagnostics</strong> and use <strong>Copy Summary</strong>.</li>
+            <li>Use <strong>Export Logs (.zip)</strong> if detailed investigation is needed.</li>
+            <li>If setup or login is broken, check the onboarding transcript at <code>setup-debug.log</code>.</li>
+            <li>If the app state is unrecoverable, use <strong>Reset App</strong>.</li>
+          </ol>
+        </div>
+        <div>
+          <h3>Useful details to include</h3>
+          <ul>
+            <li>ClawApp version and build</li>
+            <li>Bundled OpenClaw version</li>
+            <li>Bundled Node.js version</li>
+            <li>Active provider and selected model</li>
+            <li>Whether debug logging was Off, Metadata Only, or Full Content</li>
+            <li>The exact error text shown in the UI</li>
+          </ul>
+        </div>
+      </div>
+      <h3>Local support model</h3>
+      <p class="muted">ClawApp is designed to keep OpenClaw state, logs, and configuration inside the app sandbox. Support should start from the exported diagnostics and logs instead of asking users to inspect random filesystem locations.</p>
+    </section>
+
+    <section class="card">
+      <h2>简体中文</h2>
+      <div class="split">
+        <div>
+          <h3>联系支持前建议先做这些检查</h3>
+          <ol>
+            <li>打开<strong>设置</strong>，先尝试<strong>重启后端</strong>。</li>
+            <li>打开<strong>诊断</strong>，使用<strong>复制摘要</strong>。</li>
+            <li>如果需要更详细排查，使用<strong>导出日志 (.zip)</strong>。</li>
+            <li>如果是引导或登录问题，请检查 <code>setup-debug.log</code>。</li>
+            <li>如果应用状态已经不可恢复，再使用<strong>重置应用</strong>。</li>
+          </ol>
+        </div>
+        <div>
+          <h3>建议随工单一起提供的信息</h3>
+          <ul>
+            <li>ClawApp 版本号和构建号</li>
+            <li>内置 OpenClaw 版本</li>
+            <li>内置 Node.js 版本</li>
+            <li>当前提供商和所选模型</li>
+            <li>调试日志级别是关闭、仅元数据还是完整内容</li>
+            <li>界面上显示的准确报错文本</li>
+          </ul>
+        </div>
+      </div>
+      <h3>本地支持模式</h3>
+      <p class="muted">ClawApp 会把 OpenClaw 的状态、日志和配置保存在应用沙盒内。支持排查应优先基于应用导出的诊断摘要和日志，而不是要求用户去手动查找任意系统目录。</p>
+    </section>
+  </main>
+</body>
+</html>
