@@ -8,32 +8,34 @@
     :root {
       color-scheme: light dark;
       --bg: #f6f7fb;
-      --card: rgba(255,255,255,0.88);
+      --card: rgba(255,255,255,0.9);
       --text: #101828;
       --muted: #475467;
       --border: rgba(16,24,40,0.12);
       --accent: #0f62fe;
+      --accent-soft: rgba(15,98,254,0.12);
     }
     @media (prefers-color-scheme: dark) {
       :root {
         --bg: #08111f;
-        --card: rgba(11,18,32,0.92);
+        --card: rgba(11,18,32,0.94);
         --text: #f8fafc;
         --muted: #cbd5e1;
         --border: rgba(148,163,184,0.2);
         --accent: #60a5fa;
+        --accent-soft: rgba(96,165,250,0.14);
       }
     }
     * { box-sizing: border-box; }
     body {
       margin: 0;
       font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background: radial-gradient(circle at top left, rgba(15,98,254,0.12), transparent 28%), var(--bg);
+      background: radial-gradient(circle at top left, var(--accent-soft), transparent 28%), var(--bg);
       color: var(--text);
       line-height: 1.6;
     }
     main {
-      max-width: 920px;
+      max-width: 960px;
       margin: 0 auto;
       padding: 32px 20px 56px;
     }
@@ -52,6 +54,18 @@
       border-radius: 18px;
       background: var(--card);
       backdrop-filter: blur(10px);
+    }
+    .contact {
+      display: grid;
+      gap: 12px;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      margin-top: 18px;
+    }
+    .contact-item {
+      padding: 16px;
+      border-radius: 14px;
+      background: rgba(127,127,127,0.08);
+      border: 1px solid var(--border);
     }
     h2 {
       margin: 0 0 14px;
@@ -83,8 +97,23 @@
   <main>
     <header>
       <h1>ClawApp Support</h1>
-      <p>This local copy is bundled with ClawApp. You can publish the same file later at <code>https://clawapp.work/support</code>.</p>
+      <p>This page is included inside ClawApp and is also intended to be published at <code>https://clawapp.work/support</code>.</p>
     </header>
+
+    <section class="card">
+      <h2>Contact</h2>
+      <p class="muted">Use the addresses below for real support and policy communication. These are the contact details Apple reviewers and end users should be able to reach.</p>
+      <div class="contact">
+        <div class="contact-item">
+          <strong>General support</strong>
+          <div><a href="mailto:support@clawapp.work">support@clawapp.work</a></div>
+        </div>
+        <div class="contact-item">
+          <strong>Privacy requests</strong>
+          <div><a href="mailto:privacy@clawapp.work">privacy@clawapp.work</a></div>
+        </div>
+      </div>
+    </section>
 
     <section class="card">
       <h2>English</h2>
@@ -111,8 +140,9 @@
           </ul>
         </div>
       </div>
-      <h3>Local support model</h3>
-      <p class="muted">ClawApp is designed to keep OpenClaw state, logs, and configuration inside the app sandbox. Support should start from the exported diagnostics and logs instead of asking users to inspect random filesystem locations.</p>
+      <h3>Support workflow</h3>
+      <p class="muted">ClawApp is designed to keep OpenClaw state, logs, and configuration inside the app sandbox. Support should start from the exported diagnostics and logs instead of asking users to inspect arbitrary filesystem locations.</p>
+      <p class="muted">If you email support, include only the minimum information needed to investigate the problem. Do not send API keys or secrets in plain text.</p>
     </section>
 
     <section class="card">
@@ -140,8 +170,9 @@
           </ul>
         </div>
       </div>
-      <h3>本地支持模式</h3>
+      <h3>支持流程</h3>
       <p class="muted">ClawApp 会把 OpenClaw 的状态、日志和配置保存在应用沙盒内。支持排查应优先基于应用导出的诊断摘要和日志，而不是要求用户去手动查找任意系统目录。</p>
+      <p class="muted">如果通过电子邮件联系支持，请只发送排查所需的最少信息，不要直接发送 API Key 或其他敏感凭据。</p>
     </section>
   </main>
 </body>
