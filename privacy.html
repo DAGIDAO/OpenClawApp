@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ClawApp Privacy Policy</title>
+  <style>
+    :root {
+      color-scheme: light dark;
+      --bg: #f6f7fb;
+      --card: rgba(255,255,255,0.88);
+      --text: #101828;
+      --muted: #475467;
+      --border: rgba(16,24,40,0.12);
+      --accent: #0f62fe;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #08111f;
+        --card: rgba(11,18,32,0.92);
+        --text: #f8fafc;
+        --muted: #cbd5e1;
+        --border: rgba(148,163,184,0.2);
+        --accent: #60a5fa;
+      }
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: radial-gradient(circle at top left, rgba(15,98,254,0.12), transparent 28%), var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+    main {
+      max-width: 920px;
+      margin: 0 auto;
+      padding: 32px 20px 56px;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2.1rem;
+    }
+    header p {
+      margin: 10px 0 0;
+      color: var(--muted);
+    }
+    .card {
+      margin-top: 22px;
+      padding: 22px;
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      background: var(--card);
+      backdrop-filter: blur(10px);
+    }
+    h2 {
+      margin: 0 0 14px;
+      font-size: 1.15rem;
+    }
+    h3 {
+      margin: 18px 0 8px;
+      font-size: 1rem;
+    }
+    ul { margin: 10px 0 0 20px; }
+    li + li { margin-top: 6px; }
+    .muted { color: var(--muted); }
+    code {
+      padding: 2px 6px;
+      border-radius: 8px;
+      background: rgba(127,127,127,0.15);
+      font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+      font-size: 0.92em;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <h1>ClawApp Privacy Policy</h1>
+      <p>This local copy is bundled with ClawApp. You can publish the same file later at <code>https://clawapp.work/privacy</code>.</p>
+    </header>
+
+    <section class="card">
+      <h2>English</h2>
+      <h3>Summary</h3>
+      <p>ClawApp is designed as a local-first macOS app. OpenClaw state, configuration, and logs are stored inside the app sandbox on the user’s Mac. ClawApp does not include analytics or telemetry in v1.</p>
+
+      <h3>What is stored locally</h3>
+      <ul>
+        <li>OpenClaw configuration and runtime state inside the app container</li>
+        <li>User preferences such as language, appearance, quit behavior, and debug logging level</li>
+        <li>Onboarding transcripts in local debug logs</li>
+        <li>Optional runtime logs when the user enables Metadata Only or Full Content logging</li>
+      </ul>
+
+      <h3>What may be sent over the network</h3>
+      <ul>
+        <li>Provider authentication and model traffic to services the user configures, such as OpenAI or OpenRouter</li>
+        <li>Optional channel traffic if the user configures integrations such as Telegram</li>
+        <li>Local gateway traffic stays on <code>127.0.0.1</code> by default</li>
+      </ul>
+
+      <h3>User controls</h3>
+      <ul>
+        <li>Disconnect the current provider from Settings</li>
+        <li>Clear debug logs without resetting the entire app</li>
+        <li>Reset the app to remove sandboxed OpenClaw data and return to onboarding</li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h2>简体中文</h2>
+      <h3>摘要</h3>
+      <p>ClawApp 是一个以本地优先为设计原则的 macOS 应用。OpenClaw 的状态、配置和日志保存在用户 Mac 上的应用沙盒中。ClawApp v1 不包含分析或遥测功能。</p>
+
+      <h3>本地存储的内容</h3>
+      <ul>
+        <li>保存在应用容器内的 OpenClaw 配置和运行状态</li>
+        <li>语言、外观、退出行为和调试日志级别等用户偏好</li>
+        <li>保存在本地调试日志中的引导过程记录</li>
+        <li>当用户启用“仅元数据”或“完整内容”日志时产生的运行时日志</li>
+      </ul>
+
+      <h3>可能通过网络发送的内容</h3>
+      <ul>
+        <li>发送到用户自行配置的提供商服务的认证和模型请求，例如 OpenAI 或 OpenRouter</li>
+        <li>如果用户配置了 Telegram 等集成，相应的可选频道流量</li>
+        <li>本地网关默认只监听 <code>127.0.0.1</code></li>
+      </ul>
+
+      <h3>用户控制选项</h3>
+      <ul>
+        <li>可在设置中断开当前提供商</li>
+        <li>可单独清除调试日志，而不重置整个应用</li>
+        <li>可重置应用，删除沙盒中的 OpenClaw 数据并返回引导流程</li>
+      </ul>
+    </section>
+  </main>
+</body>
+</html>
